@@ -1,0 +1,53 @@
+﻿@model E_commerce.Models.ProductMaster
+@{
+    ViewBag.Title = "UpdateProduct";
+}
+<br />
+<h2>Update Product</h2>
+<br />
+<div class="container">
+    @using (Html.BeginForm("UpdateProduct", "Admin", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    @Html.Label("Product ID:")
+                    @Html.TextBoxFor(m => m.ProductId, new { @class = "form-control", @readonly = "true" })
+                </div>
+                <div>
+                    @Html.Label("Product Name:")
+                    @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control"})
+                </div>
+                <div>
+                    @Html.Label("Brand:")
+                    @Html.TextBoxFor(m => m.Brand, new { @class = "form-control"})
+                </div>
+                <div>
+                    @Html.Label("Colour:")
+                    @Html.TextBoxFor(m => m.Colour, new { @class = "form-control"})
+                </div>
+                <div>
+                    @Html.Label("RAM Size:")
+                    @Html.TextBoxFor(m => m.RAM_Size, new { @class = "form-control"})
+                </div>
+                <div>
+                    @Html.Label("Hard Drive Size:")
+                    @Html.TextBoxFor(m => m.Hard_Drive_Size, new { @class = "form-control"})
+                </div>
+                <div>
+                    @Html.Label("Processor Type:")
+                    @Html.TextBoxFor(m => m.Processor_Type, new { @class = "form-control"})
+                </div>
+                <div>
+                    @Html.Label("MRP:")
+                    @Html.TextBoxFor(m => m.MRP, new { @class = "form-control"})
+                </div>
+                <br />
+                <div>
+                    <input type="submit" value="Update" class="btn btn-danger" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

@@ -1,0 +1,38 @@
+﻿@model List<E_commerce.Models.ProductMaster>
+@{
+    ViewBag.Title = "ProductList";
+}
+<br />
+<h2>Products List</h2>
+<br />
+@Html.ActionLink("Add product","AddProducts","Admin", new {@class="btn btn-success"})
+<br />
+<br />
+<table class="table table-responsive table-hover">
+    <tr class="bg-info">
+        <th>ProductId</th>
+        <th>ProductName</th>
+        <th> Brand</th>
+        <th> Colour</th>
+        <th> RAM_Size</th>
+        <th>Hard_Drive_Size</th>
+        <th> Processor_Type</th>
+        <th> MRP</th>
+    </tr>
+    @foreach(var prod in Model)
+            {
+                <tr class="bg-light">
+                    <td>@prod.ProductId</td>
+                    <td>@prod.ProductName</td>
+                    <td>@prod.Brand</td>
+                    <td>@prod.Colour</td>
+                    <td>@prod.RAM_Size</td>
+                    <td>@prod.Hard_Drive_Size</td>
+                    <td>@prod.Processor_Type</td>
+                    <td>@prod.MRP</td>
+                    <td>@Html.ActionLink("Delete", "DeleteProduct","Admin",new { id=prod.ProductId}, new { @class = "btn btn-danger" })</td>
+                    <td>@Html.ActionLink("Update", "UpdateProduct", "Admin", new { id = prod.ProductId }, new { @class = "btn btn-info" })</td>
+                </tr>
+            }
+</table>
+

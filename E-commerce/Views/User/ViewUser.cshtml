@@ -1,0 +1,23 @@
+﻿@model E_commerce.Models.UserInfo
+@{
+    ViewBag.Title = "ViewUserDetails";
+}
+
+<br />
+
+
+<div class="container">
+    @using (Html.BeginForm("UserProfile", "User", FormMethod.Post))
+    {
+
+        <div>
+            @Html.Label("Email ID:")
+            @Html.TextBoxFor(m => m.EmailId, new { @class = "form-control" })
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="View" class="btn btn-success" />
+        </div>
+
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿@model E_commerce.Models.ProductMaster
+@{
+    ViewBag.Title = "BuyProduct";
+}
+
+<br />
+<br />
+<div class="container">
+    @using (Html.BeginForm("BuyProduct", "User", FormMethod.Post))
+    {
+        <div class="card mb-3" style="max-width: 1250px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/Images/@(Model.ProductId).jfif" width="400px" height="400px" class="img-fluid rounded-start" >
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.ProductName</h5>
+                        <div>
+                            @Html.Label("MRP:")
+                            @Html.TextBoxFor(m => m.MRP, new { @class = "form-control", @readonly = "true" })
+                        </div>
+                        <div>
+                            @Html.Label("Product ID:")
+                            @Html.TextBoxFor(m => m.ProductId, new { @class = "form-control", @readonly = "true" })
+                        </div>
+                        <p class="card-text"><small class="text-muted">RAM:@Model.RAM_Size</small></p>
+                        <p class="card-text"><small class="text-muted">Hard Drive:@Model.Hard_Drive_Size</small></p>
+                        <p class="card-text"><small class="text-muted">Processor:@Model.Processor_Type</small></p>
+                        <p class="card-text"><small class="text-muted">Quantity:</small></p>
+                        <div>
+                            @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control" })
+                        </div>
+                        <br />
+                        <p class="card-text"><small class="text-muted">E-Mail:</small></p>
+                        <div>
+                            @Html.Label("Email ID:")
+                            @Html.TextBoxFor(m => m.EmailId, new { @class = "form-control" })
+                        </div>
+                        <br />
+                        <div>
+                            <input type="submit" value="Buy" class="btn btn-danger" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

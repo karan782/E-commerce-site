@@ -1,0 +1,44 @@
+﻿@model E_commerce.Models.UserInfo
+@{
+    ViewBag.Title = "UserLogin";
+}
+<br />
+<h2>UserLogin</h2>
+
+<div class="container">
+    @using (Html.BeginForm("NewUser", "Common", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    @Html.Label("Name:")
+                    @Html.TextBoxFor(m => m.CustName, new { @class = "form-control", @placeholder = "Enter Full Name" })
+                </div>
+                <div>
+                    @Html.Label("Email ID:")
+                    @Html.TextBoxFor(m => m.EmailId, new { @class = "form-control", @placeholder = "Enter official Email Id" })
+                </div>
+                <div>
+                    @Html.Label("ZipCode:")
+                    @Html.TextBoxFor(m => m.Zipcode, new { @class = "form-control", @placeholder = "Enter ZipCode" })
+                </div>
+                <div>
+                    @Html.Label("Country:")
+                    @Html.TextBoxFor(m => m.country, new { @class = "form-control", @placeholder = "Enter Country" })
+                </div>
+                <div>
+                    @Html.Label("Password:")
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Enter Password" })
+                </div>
+                <br />
+                <div>
+                    <input type="submit" value="Add" class="btn btn-danger" />
+                </div>
+                @if (ViewBag.error != null)
+                {
+                    <p class="text-danger">@ViewBag.error</p>
+                }
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,32 @@
+﻿@model E_commerce.Models.UserInfo
+@{
+    ViewBag.Title = "AdminLogin";
+}
+<br />
+<h2>AdminLogin</h2>
+
+<div class="container">
+@using (Html.BeginForm("ValidateAdmin", "Common", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                @Html.Label("Email ID:")
+                @Html.TextBoxFor(m => m.EmailId, new { @class = "form-control", @placeholder = "Enter official Email Id" })
+            </div>
+            <div>
+                @Html.Label("Password:")
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Enter Password" })
+            </div>
+            <br />
+            <div>
+                <input type="submit" value="Login" class="btn btn-danger" />
+            </div>
+            @if (ViewBag.error != null)
+            {
+                <p class="text-danger">@ViewBag.error</p>
+            }
+        </div>
+    </div>
+}
+</div>

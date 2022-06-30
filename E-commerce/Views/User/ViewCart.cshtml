@@ -1,0 +1,28 @@
+﻿@model List<E_commerce.Models.OrderDetails>
+@{
+    ViewBag.Title = "OrderList";
+}
+<br />
+<h2>Order List</h2>
+<br />
+<table class="table table-responsive table-hover">
+    <tr class="bg-info">
+        <th>OrderID</th>
+        <th>ProductID</th>
+        <th> Quantity</th>
+        <th> OrderDate</th>
+        <th> Price</th>
+    </tr>
+
+    @foreach (var prod in Model)
+    {
+        <tr class="bg-light">
+            <td>@prod.OrderID</td>
+            <td>@prod.ProuctID</td>
+            <td>@prod.Quantity</td>
+            <td>@prod.OrderDate</td>
+            <td>@prod.Price</td>
+        </tr>
+    }
+</table>
+
